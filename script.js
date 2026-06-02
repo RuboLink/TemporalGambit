@@ -4,7 +4,7 @@ const differentBox = document.getElementById("different_box");
 const differentTimes = document.getElementById("different_times");
 const whiteTime = document.getElementById("white_time")
 const body = document.getElementsByTagName("body");
-const tiempos = `<select id="tiempos">
+const tiemposList = `<select id="tiempos_list">
                     <option>1 min</option>
                     <option>3 min</option>
                     <option>5 min</option>
@@ -14,32 +14,37 @@ const tiempos = `<select id="tiempos">
                     <option>30 min</option>
                     <option>60 min</option>
                     <option>90 min</option>
-                </select>`
+                </select>`;
+
+const incrementosList = `<select id="incrementos_list">
+                        <option>+1 seg</option>
+                        <option>+3 seg</option>
+                        <option>+5 seg</option>
+                        <option>+10 seg</option>
+                     </select>`;
+
+
+
+async function firstLoad(){
+    differentTimes.innerHTML = `<label id="white_time">Tiempo de cada reloj: ${tiemposList}</label>`;
+}
 
 addIncrementBox.addEventListener("click", async () => {
     if(addIncrementBox.checked){
-        incrementList.innerHTML = `<label
-                                    >Tiempo de incremento: <input list="incrementos" name="increments"/></label>
-                                    <br/>
-
-                                    <datalist id="incrementos">
-                                        <option value="+3 segundos"></option>
-                                        <option value="+5 segundos"></option>
-                                        <option value="+10 segundos"></option>
-                                        </datalist>
-                                        `
+        incrementList.innerHTML = `<label>Tiempo de incremento: ${incrementosList}</label>
+                                    <br/>`
     } else { incrementList.innerHTML = ""}
 })
 
 differentBox.addEventListener("click", async () => {
     if(differentBox.checked){
-        whiteTime.innerHTML = `Tiempo de piezas blancas: <input list="tiempos" name="White_time"/>
-                                <br/>`
-        differentTimes.innerHTML = `<label
-                                    >Tiempo de piezas negras: <input list="tiempos" name="black_time"/></label>
+        differentTimes.innerHTML = `<label>Tiempo de piezas blancas: ${tiemposList}</label>
+                                    <br/>
+                                    <label>Tiempo de piezas negras: ${tiemposList}</label>
                                     <br/>`
     } else { 
-        differentTimes.innerHTML = "";
-        whiteTime.innerHTML = `<label id="white_time">Tiempo de cada reloj: <input list="tiempos" name="Tiempos"/></label>`
+        differentTimes.innerHTML = `<label>Tiempo de cada reloj: ${tiemposList}</label>`;
     }
 })
+
+
