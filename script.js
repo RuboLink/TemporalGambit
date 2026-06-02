@@ -4,6 +4,17 @@ const differentBox = document.getElementById("different_box");
 const differentTimes = document.getElementById("different_times");
 const whiteTime = document.getElementById("white_time")
 const body = document.getElementsByTagName("body");
+const tiempos = `<select id="tiempos">
+                    <option>1 min</option>
+                    <option>3 min</option>
+                    <option>5 min</option>
+                    <option>10 min</option>
+                    <option>15 min</option>
+                    <option>20 min</option>
+                    <option>30 min</option>
+                    <option>60 min</option>
+                    <option>90 min</option>
+                </select>`
 
 addIncrementBox.addEventListener("click", async () => {
     if(addIncrementBox.checked){
