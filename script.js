@@ -70,7 +70,7 @@ readyButton.addEventListener("click", async () => {
 })
 
 async function setClocks(){
-    main.display = "none";
-    clocks.style.display = "block" 
+    main[0].style.display = "none"
+    clocks.style.display = "block"
 
 }
