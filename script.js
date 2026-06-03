@@ -4,6 +4,8 @@ const differentBox = document.getElementById("different_box");
 const differentTimes = document.getElementById("different_times");
 const main = document.getElementsByTagName("main");
 const readyButton = document.getElementById("ready_button")
+const configButtons = document.getElementsByClassName("config_buttons");
+
 const tiemposList = `<select class="tiempos_list">
                         <option value="1">1 min</option>
                         <option value="3">3 min</option>
@@ -44,19 +46,27 @@ differentBox.addEventListener("click", async () => {
 
 readyButton.addEventListener("click", async () => {
     readyButton.hidden = true;
+    configButtons[0].hidden = false;
     if(differentBox.checked){
         let whiteLabel = document.getElementById("white_time");
         let whiteSelect = whiteLabel.querySelector("select");
+        console.log(whiteSelect.value)
         
         let blackLabel = document.getElementById("black_time");
         let blackSelect = blackLabel.querySelector("select");
+        console.log(blackSelect.value)
         
     } else {
         let timeLabel = document.getElementById("both_times");
-        let times = timeLabel.querySelector("select");
+        let times = timeLabel.querySelector("#tiempos_list");
+        console.log(times.value)
 
         
     }
 
     readyButton.hidden = false;
 })
+
+// async function setClocks(playerTime1, playerTime2){
+//     main.innerHTML = 
+// }
