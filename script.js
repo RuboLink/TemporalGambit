@@ -6,6 +6,9 @@ const main = document.getElementsByTagName("main");
 const readyButton = document.getElementById("ready_button")
 const configButtons = document.getElementsByClassName("config_buttons");
 const clocks = document.getElementById("clocks")
+let minutos;
+let segundos;
+let milisegundos;
 
 const tiemposList = `<select class="tiempos_list">
                         <option value="1">1 min</option>
@@ -72,5 +75,8 @@ readyButton.addEventListener("click", async () => {
 async function setClocks(){
     main[0].style.display = "none"
     clocks.style.display = "block"
+}
+
+async function setTime(playerTimeWhite, playerTimeBlack){
 
 }
